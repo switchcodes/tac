@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import android.widget.TextView
 import com.example.tac.databinding.ActivityMainBinding
 import org.w3c.dom.Text
@@ -14,6 +15,7 @@ class MainActivity : Activity() {
 
 	lateinit var animTranslate:Animation
 	lateinit var setText:TextView
+	lateinit var bt:Button
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -26,6 +28,12 @@ class MainActivity : Activity() {
 		animTranslate = AnimationUtils.loadAnimation(this, R.anim.translate)
 
 		setText.isSelected = true
+
+		bt = findViewById(R.id.enemy)
+		bt.setOnClickListener{
+
+			println("HEEEEEEELP")
+		}
 
 		/*
 		setText.animate().apply{
