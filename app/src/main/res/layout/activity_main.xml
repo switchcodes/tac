@@ -5,20 +5,120 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".MainActivity"
-    tools:deviceIds="wear">
+    tools:context=".MainActivity">
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:layout_boxedEdges="all">
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginBottom="-10dp">
+
+        <Button
+            android:id="@+id/enemy"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Enemy point"
+            android:textColor="@color/light"
+            android:textColorHint="@color/lightRed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/myself"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="My point"
+            android:textColor="@color/light"
+            android:textColorHint="@color/lightGreen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/undo"
+            style="@android:style/Widget.DeviceDefault.Light.Button.Toggle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:text="undo"
+            app:layout_constraintBottom_toTopOf="@+id/myself"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enemy" />
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/set"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
+            android:layout_marginBottom="5dp"
+            android:text="Set"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/game"
+            app:layout_constraintEnd_toEndOf="@+id/service" />
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:layout_marginBottom="54dp"
+            android:text="Game"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/myself"
+            app:layout_constraintEnd_toEndOf="@+id/service"
+            app:layout_constraintTop_toBottomOf="@+id/enemy" />
+
+        <TextView
+            android:id="@+id/service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Service"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/undo"
+            app:layout_constraintTop_toBottomOf="@+id/game" />
+
+        <TextView
+            android:id="@+id/setPoints"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="6|1 6|1 6|1 6|1"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/gamePoints"
+            app:layout_constraintEnd_toEndOf="@+id/gamePoints"
+            app:layout_constraintStart_toStartOf="@+id/gamePoints" />
+
+        <TextView
+            android:id="@+id/gamePoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="30 | 30"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/game"
+            app:layout_constraintTop_toTopOf="@+id/game" />
+
+        <TextView
+            android:id="@+id/serviceSide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Right"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/gamePoints"
+            app:layout_constraintStart_toStartOf="@+id/gamePoints"
+            app:layout_constraintTop_toBottomOf="@+id/gamePoints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.wear.widget.BoxInsetLayout>
