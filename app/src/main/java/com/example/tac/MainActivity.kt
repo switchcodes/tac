@@ -7,7 +7,6 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import com.example.tac.databinding.ActivityMainBinding
-import org.w3c.dom.Text
 
 class MainActivity : Activity() {
 
@@ -15,7 +14,9 @@ class MainActivity : Activity() {
 
 	lateinit var animTranslate:Animation
 	lateinit var setText:TextView
-	lateinit var bt:Button
+	lateinit var btEnemy:Button
+	lateinit var btMy:Button
+	lateinit var btUndo:Button
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -29,10 +30,17 @@ class MainActivity : Activity() {
 
 		setText.isSelected = true
 
-		bt = findViewById(R.id.enemy)
-		bt.setOnClickListener{
-
-			println("HEEEEEEELP")
+		btEnemy = findViewById(R.id.enemy)
+		btMy = findViewById(R.id.myself)
+		btUndo = findViewById(R.id.undo)
+		btEnemy.setOnClickListener{
+			println("Enemy")
+		}
+		btMy.setOnClickListener{
+			println("Myself")
+		}
+		btUndo.setOnClickListener{
+			println("Undo")
 		}
 
 		/*
