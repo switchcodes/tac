@@ -24,7 +24,6 @@ class MainActivity : Activity() {
 		binding = ActivityMainBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
-
 		setText = findViewById(R.id.setPoints)
 		animTranslate = AnimationUtils.loadAnimation(this, R.anim.translate)
 
@@ -33,24 +32,29 @@ class MainActivity : Activity() {
 		btEnemy = findViewById(R.id.enemy)
 		btMy = findViewById(R.id.myself)
 		btUndo = findViewById(R.id.undo)
+
+		var enemy = Player(0,0)
+		var me = Player(0,0)
+
+		var l = Logic(enemy,me)
+
 		btEnemy.setOnClickListener{
 			println("Enemy")
+			l.addPoint(enemy)
+			println(enemy.gamePoints)
+			println(enemy.advantage)
 		}
 		btMy.setOnClickListener{
 			println("Myself")
+			l.addPoint(me)
+			println(me.gamePoints)
+			println(me.advantage)
 		}
 		btUndo.setOnClickListener{
 			println("Undo")
+			println(enemy.gamePoints.toString() + " : " + me.gamePoints)
 		}
 
-		/*
-		setText.animate().apply{
-			duration = 2000
-			rotationXBy(360f)
-			rotationX(360f)
-		}
-
-		 */
 
 	}
 }

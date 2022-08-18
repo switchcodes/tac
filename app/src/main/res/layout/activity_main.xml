@@ -15,6 +15,28 @@
         android:layout_marginEnd="-10dp"
         android:layout_marginBottom="-10dp">
 
+        <Button
+            android:id="@+id/myself"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/lightGreen"
+            android:text="My point"
+            android:textColor="@color/light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/enemy"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/lightRed"
+            android:text="Enemy point"
+            android:textColor="@color/light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -23,10 +45,10 @@
 
             <Button
                 android:id="@+id/undo"
-                android:layout_width="40dp"
-                android:layout_height="264px"
-                android:layout_marginTop="57dp"
-                android:layout_marginBottom="57dp"
+                android:layout_width="42dp"
+                android:layout_height="300px"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
                 android:text="Undo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +95,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/game"
-                tools:layout_editor_absoluteX="75dp" />
+                app:layout_constraintEnd_toEndOf="@+id/game" />
 
             <TextView
                 android:id="@+id/service"
@@ -103,25 +125,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/gamePoints"
                 app:layout_constraintStart_toStartOf="@+id/gamePoints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <Button
-            android:id="@+id/myself"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/lightGreen"
-            android:text="My point"
-            android:textColor="@color/light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/enemy"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/lightRed"
-            android:text="Enemy point"
-            android:textColor="@color/light" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.wear.widget.BoxInsetLayout>
